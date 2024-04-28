@@ -10,7 +10,7 @@ df = pd.read_csv('Amazon Sales data.csv')
 
 # Step 2: Transform - Analyze sales trends and compute key metrics
 # Convert 'Order Date' column to datetime format
-df['Order Date'] = pd.to_datetime(df['Order Date'])
+df['Order Date'] = pd.to_datetime(df['Order Date'], errors='coerce')
 
 # Extract year and month from 'Order Date' column
 df['Year'] = df['Order Date'].dt.year
